@@ -23,10 +23,9 @@ requirements:
     - setuptools
   run:
     - cryptography >=1.3
-    - pykerberos >=1.1.8,<2.0.0  # [not win]
+    - pyspnego
     - python
     - requests >=1.1.0
-    - winkerberos >=0.5.0  # [win]
 
 test:
   imports:
