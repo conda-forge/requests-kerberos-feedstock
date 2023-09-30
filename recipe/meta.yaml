@@ -1,5 +1,5 @@
 {% set name = "requests-kerberos" %}
-{% set version = "0.12.0" %}
+{% set version = "0.14.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,10 +7,10 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: "9d21f15241c53c2ad47e813138b9aee4b9acdd04b82048c4388ade15f40a52fd"
+  sha256: "cda9d1240ae5392e081869881c8742d0e171fd6a893a7ac0875db2748e966fd1"
 
 build:
-  number: 5
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
 
 requirements:
