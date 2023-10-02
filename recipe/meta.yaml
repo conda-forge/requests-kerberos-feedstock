@@ -28,8 +28,13 @@ requirements:
     - requests >=1.1.0
 
 test:
+  requires:
+    - pip
   imports:
     - requests_kerberos
+  commands:
+    - python -m pip check
+    - python -m pip show requests-kerberos
 
 about:
   home: "https://github.com/requests/requests-kerberos"
