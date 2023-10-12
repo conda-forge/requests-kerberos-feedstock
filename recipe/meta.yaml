@@ -2,17 +2,17 @@
 {% set version = "0.14.0" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: "cda9d1240ae5392e081869881c8742d0e171fd6a893a7ac0875db2748e966fd1"
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: cda9d1240ae5392e081869881c8742d0e171fd6a893a7ac0875db2748e966fd1
 
 build:
   noarch: python
   number: 1
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -35,13 +35,13 @@ test:
     - python -m pip show requests-kerberos
 
 about:
-  home: "https://github.com/requests/requests-kerberos"
-  dev_url: "https://github.com/requests/requests-kerberos"
-  doc_url: "https://pypi.org/project/requests-kerberos/"
-  license: "ISC"
-  license_family: "MIT"
-  license_file: "LICENSE"
-  summary: "A Kerberos authentication handler for python-requests"
+  home: https://github.com/requests/requests-kerberos
+  dev_url: https://github.com/requests/requests-kerberos
+  doc_url: https://pypi.org/project/requests-kerberos/
+  license: ISC
+  license_family: MIT
+  license_file: LICENSE
+  summary: A Kerberos authentication handler for python-requests
   description: |
     Requests is an HTTP library, written in Python, for human beings.
     This library adds optional Kerberos/GSSAPI authentication support
