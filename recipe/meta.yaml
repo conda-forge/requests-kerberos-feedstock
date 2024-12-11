@@ -6,18 +6,18 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: 437512e424413d8113181d696e56694ffa4259eb9a5fc4e803926963864eaf4e
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools >=61.0.0
   run:
     - __unix  # [unix]
@@ -26,7 +26,7 @@ requirements:
     - pyspnego
     - pykrb5 >=0.3.0  # [not win]
     - python-gssapi >=1.6.0  # [not win]
-    - python >=3.8
+    - python >={{ python_min }}
     - requests >=1.1.0
 
 test:
@@ -34,6 +34,7 @@ test:
     - pip
     - pytest
     - pytest-mock
+    - python {{ python_min }}
   source_files:
     - tests/
   commands:
